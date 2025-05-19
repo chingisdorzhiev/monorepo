@@ -5,7 +5,7 @@ import { adminRoutes } from '@packages/shared/src/routes/admin';
 import { shopRutes } from '@packages/shared/src/routes/shop';
 
 export const App = () => {
-  console.log('example');
+  console.log('exampleanother');
   const a = sum(1, 2);
   return (
     <div>
