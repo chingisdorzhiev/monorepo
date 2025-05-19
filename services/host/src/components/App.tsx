@@ -1,10 +1,11 @@
-import { useState } from "react";
-import { sum } from "@packages/shared";
-import { Link, Outlet } from "react-router-dom";
-import { adminRoutes } from "@packages/shared/src/routes/admin";
-import { shopRutes } from "@packages/shared/src/routes/shop";
+import { useState } from 'react';
+import { sum } from '@packages/shared';
+import { Link, Outlet } from 'react-router-dom';
+import { adminRoutes } from '@packages/shared/src/routes/admin';
+import { shopRutes } from '@packages/shared/src/routes/shop';
 
 export const App = () => {
+  console.log('example');
   const a = sum(1, 2);
   return (
     <div>

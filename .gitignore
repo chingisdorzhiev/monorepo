@@ -1,2 +1,25 @@
-node_modules
-.idea
+# Node
+node_modules/
+dist/
+build/
+.env
+.env.local
+*.log
+
+# Editor
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+
+# Cache
+.cache/
+coverage/
+
+# Monorepo-specific
+services/*/dist/
+services/*/build/
+packages/*/dist/
+packages/*/build/
