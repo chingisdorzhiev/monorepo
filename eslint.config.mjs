@@ -3,18 +3,8 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import pluginReact from 'eslint-plugin-react';
 import { defineConfig } from 'eslint/config';
-// import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import prettier from 'eslint-plugin-prettier';
-// import path from 'node:path';
-
-// export default defineConfig([
-//   // JS/TS базовые правила
-//   { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'], plugins: { js }, extends: ['js/recommended'] },
-//   { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'], languageOptions: { globals: globals.browser } },
-//   tseslint.configs.recommended,
-//   pluginReact.configs.flat.recommended,
-// ]);
 
 export default defineConfig([
   {
