@@ -1,3 +1,3 @@
 export const adminRoutes = {
-  admin: "/admin/about",
+  main: '/admin',
 };
