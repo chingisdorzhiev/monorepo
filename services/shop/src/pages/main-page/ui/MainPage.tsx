@@ -1,11 +1,13 @@
-import { shopRoutes } from '@packages/shared/src/routes/shop';
+import { hostRoutes } from '@packages/shared/src/routes';
 import { Link } from 'react-router-dom';
 
 export const MainPage = () => {
   return (
     <div>
       <div>SHOP Main Page</div>
-      <div>{/* <Link to={shopRutes.second}>Go see second page</Link> */}</div>
+      <div>
+        <Link to={hostRoutes.home}>Home</Link>
+      </div>
     </div>
   );
 };

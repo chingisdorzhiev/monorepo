@@ -1,9 +1,11 @@
-import { lazy, Suspense } from 'react';
+import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { Loadable } from '../../shared/ui';
+import { hostRoutes, shopRoutes } from '@packages/shared/src/routes';
 
-import { MainPage } from '../../pages/main-page';
+import { Loadable } from '~/shared/ui';
+import { MainPage } from '~/pages/main-page';
+import { NotFoundPage } from '~/pages/not-found';
 
 // Микрофронты
 // @ts-ignore
@@ -11,11 +13,12 @@ const ShopPage = Loadable(lazy(() => import('shop/Router')));
 
 export const AppRoutes = () => {
   return (
-    <Suspense fallback={<div>Загрузка...</div>}>
-      <Routes>
+    <Routes>
+      <Route path={hostRoutes.home}>
         <Route index element={<MainPage />} />
-        <Route path="/shop/*" element={<ShopPage />} />
-      </Routes>
-    </Suspense>
+        <Route path={hostRoutes.notFound} element={<NotFoundPage />} />
+        <Route path={shopRoutes.main} element={<ShopPage />} />
+      </Route>
+    </Routes>
   );
 };

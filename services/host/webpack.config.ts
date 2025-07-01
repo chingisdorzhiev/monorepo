@@ -1,8 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import type { Configuration as DevServerConfiguration } from 'webpack-dev-server';
-import { buildWebpack } from '@packages/build-config';
-import { BuildMode, BuildPaths, PlatformMode } from '@packages/build-config';
+import { buildWebpack, BuildMode, BuildPaths, PlatformMode } from '@packages/build-config';
 import packageJson from './package.json';
 
 interface EnvVariables {

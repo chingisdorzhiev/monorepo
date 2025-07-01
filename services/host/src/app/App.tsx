@@ -1,7 +1,7 @@
 import AppProvider from './providers';
 import { AppRoutes } from './routes';
 
-import './App.module.css';
+import './global.css';
 
 export const App = () => {
   return (

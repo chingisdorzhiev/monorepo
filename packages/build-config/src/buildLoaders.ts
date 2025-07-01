@@ -1,45 +1,50 @@
-import { ModuleOptions } from "webpack";
-import { BuildOptions } from "./types.ts/types";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import ReactRefreshTypeScript from "react-refresh-typescript";
+import { ModuleOptions } from 'webpack';
+import { BuildOptions } from './types.ts/types';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import ReactRefreshTypeScript from 'react-refresh-typescript';
 
-export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
-  const isDev = options.mode === "development";
+export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
+  const isDev = options.mode === 'development';
 
   const assetLoader = {
     test: /\.(png|jpg|jpeg|gif)$/i,
-    type: "asset/resource",
+    type: 'asset/resource',
   };
 
   const svgLoader = {
     test: /\.svg$/i,
     issuer: /\.[jt]sx?$/,
-    use: [{ loader: "@svgr/webpack", options: { icon: true } }],
+    use: [{ loader: '@svgr/webpack', options: { icon: true } }],
   };
 
-  const cssLoaderWithModules = {
-    loader: "css-loader",
-    options: {
-      modules: {
-        auto: /\.module\./,
-        localIdentName: isDev ? "[path][name]__[local]" : "[hash:base64:8]",
-      },
-    },
-  };
-
-  const cssLoader = {
-    test: /\.css$/i,
+  const cssModulesLoader = {
+    test: /\.module\.css$/i,
     use: [
-      isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-      cssLoaderWithModules,
+      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+      {
+        loader: 'css-loader',
+        options: {
+          modules: {
+            localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:8]',
+          },
+          sourceMap: isDev,
+          esModule: true,
+        },
+      },
     ],
+  };
+
+  const globalCssLoader = {
+    test: /\.css$/i,
+    exclude: /\.module\.css$/i,
+    use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader'],
   };
 
   const tsLoader = {
     test: /\.tsx?$/,
     use: [
       {
-        loader: "ts-loader",
+        loader: 'ts-loader',
         options: {
           // Отменяет проверку типов (только транспиляция ts-кода)
           transpileOnly: isDev,
@@ -52,5 +57,5 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
     exclude: /node_modules/,
   };
 
-  return [svgLoader, assetLoader, cssLoader, tsLoader];
+  return [svgLoader, assetLoader, cssModulesLoader, globalCssLoader, tsLoader];
 }
