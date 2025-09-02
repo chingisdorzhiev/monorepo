@@ -32,7 +32,7 @@ export default (env: EnvVariables) => {
     platform: env.platform ?? 'desktop',
   });
 
-  config.plugins.push(
+  config?.plugins?.push(
     new webpack.container.ModuleFederationPlugin({
       name: 'host',
       filename: 'remoteEntry.js',
