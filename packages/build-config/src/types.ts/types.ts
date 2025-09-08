@@ -6,8 +6,8 @@ export interface BuildPaths {
   public: string;
 }
 
-export type BuildMode = "production" | "development";
-export type PlatformMode = "mobile" | "desktop";
+export type BuildMode = 'production' | 'development';
+export type PlatformMode = 'mobile' | 'desktop';
 
 export interface BuildOptions {
   port: number;
@@ -15,4 +15,5 @@ export interface BuildOptions {
   mode: BuildMode;
   analyser?: boolean;
   platform: PlatformMode;
+  extraAliases?: Record<string, string>;
 }

@@ -1,7 +1,7 @@
 import { hostRoutes } from '@packages/shared/src/routes';
 import { Link } from 'react-router-dom';
 
-import { shopPathes } from '~/shared/constants';
+import { shopPathes } from '~shared/constants';
 
 export const MainPage = () => {
   return (

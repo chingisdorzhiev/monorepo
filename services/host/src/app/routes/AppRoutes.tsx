@@ -9,8 +9,7 @@ import { NotFoundPage } from '~/pages/not-found';
 
 // Микрофронты
 // @ts-ignore
-// const ShopPage = Loadable(lazy(() => import('shop/Router')));
-const ShopPage = lazy(() => import('shop/Router'));
+const ShopPage = Loadable(lazy(() => import('shop/Router')));
 
 export const AppRoutes = () => {
   return (

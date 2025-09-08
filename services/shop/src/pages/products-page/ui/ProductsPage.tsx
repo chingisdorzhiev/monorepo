@@ -1,6 +1,6 @@
 import React from 'react';
-import { useProducts } from '~/shared/api';
-import { ProductCard } from '~/entities/product';
+import { useProducts } from '~shared/api';
+import { ProductCard } from '~entities/product';
 
 import { mapProductsDtoToProductsUi } from '../model/mappers';
 

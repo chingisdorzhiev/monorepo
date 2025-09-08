@@ -9,7 +9,16 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "paths": {
+      "~/*": ["./src/*"],
+      "~shared/*": ["./src/shared/*"],
+      "~entities/*": ["./src/entities/*"],
+      "~features/*": ["./src/features/*"],
+      "~widgets/*": ["./src/widgets/*"],
+      "~pages/*": ["./src/pages/*"],
+      "~app/*": ["./src/app/*"]
+    }
   },
   "ts-node": {
     "compilerOptions": {
