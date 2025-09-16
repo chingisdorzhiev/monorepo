@@ -38,7 +38,7 @@ export default (env: EnvVariables) => {
     extraAliases,
   });
 
-  config.plugins.push(
+  config?.plugins?.push(
     new webpack.container.ModuleFederationPlugin({
       name: 'shop',
       filename: 'remoteEntry.js',
@@ -49,14 +49,17 @@ export default (env: EnvVariables) => {
         ...packageJson.dependencies,
         react: {
           eager: true,
+          singleton: true,
           requiredVersion: packageJson.dependencies['react'],
         },
         'react-router-dom': {
           eager: true,
+          singleton: true,
           requiredVersion: packageJson.dependencies['react-router-dom'],
         },
         'react-dom': {
           eager: true,
+          singleton: true,
           requiredVersion: packageJson.dependencies['react-dom'],
         },
       },
