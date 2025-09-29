@@ -23,3 +23,5 @@ services/*/dist/
 services/*/build/
 packages/*/dist/
 packages/*/build/
+*storybook.log
+storybook-static
