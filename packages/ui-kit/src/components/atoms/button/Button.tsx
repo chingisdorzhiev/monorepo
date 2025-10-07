@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { cn } from '../../../utils';
 
 import styles from './styles.module.css';
 
@@ -7,8 +8,10 @@ type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 export const Button: FC<Props> = ({ children, variant = 'primary', ...props }) => {
+  console.log('Button');
+
   return (
-    <button className={`${styles.button} ${styles[variant]}`} {...props}>
+    <button className={cn(styles.button, styles[variant])} {...props}>
       {children}
     </button>
   );

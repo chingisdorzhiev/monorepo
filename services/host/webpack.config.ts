@@ -24,12 +24,22 @@ export default (env: EnvVariables) => {
     public: path.resolve(__dirname, 'public'),
   };
 
+  const extraAliases = {
+    '~shared': path.resolve(paths.src, 'shared'),
+    '~entities': path.resolve(paths.src, 'entities'),
+    '~features': path.resolve(paths.src, 'features'),
+    '~widgets': path.resolve(paths.src, 'widgets'),
+    '~pages': path.resolve(paths.src, 'pages'),
+    '~app': path.resolve(paths.src, 'app'),
+  };
+
   const config: webpack.Configuration = buildWebpack({
     port: env.port ?? 3000,
     mode: env.mode ?? 'development',
     paths,
     analyser: env.analyser,
     platform: env.platform ?? 'desktop',
+    extraAliases,
   });
 
   config?.plugins?.push(

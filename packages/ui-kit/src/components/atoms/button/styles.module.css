@@ -1,11 +1,12 @@
 .button {
-  padding: var(--spacing-md) var(--spacing-lg);
+  padding: var(--spacing-2) var(--spacing-4);
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   cursor: pointer;
   font-size: var(--font-size-md);
   font-family: var(--font-family);
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color var(--transition-base) ease-in-out;
+  box-shadow: var(--shadow-sm);
 }
 
 .primary {
@@ -14,7 +15,7 @@
 }
 
 .primary:hover {
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary-hover);
 }
 
 .secondary {

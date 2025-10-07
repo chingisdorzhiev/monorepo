@@ -2,6 +2,12 @@
   "extends": "../../tsconfig.base.json",
   "include": ["src", "global.d.ts"],
   "compilerOptions": {
-    "noEmit": true
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"],
+      "~utils": ["./src/utils/index.ts"],
+      "~hooks/*": ["./src/hooks/index.ts"]
+    }
   }
 }

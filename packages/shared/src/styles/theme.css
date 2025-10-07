@@ -1,18 +1,65 @@
 :root {
-  /* colors */
+  /* Colors (brand + base) */
   --color-primary: #1e90ff;
+  --color-primary-hover: #1c86ee;
   --color-secondary: #ff7f50;
   --color-bg: #fff;
+  --color-bg-muted: #f8f9fa;
   --color-text: #333;
+  --color-text-muted: #6c757d;
+  --color-border: #dee2e6;
 
-  /* fonts */
+  /* Semantic (status colors) */
+  --color-success: #28a745;
+  --color-danger: #dc3545;
+  --color-warning: #ffc107;
+  --color-info: #17a2b8;
+
+  /* Typography */
   --font-family: 'Inter', sans-serif;
   --font-size-sm: 12px;
   --font-size-md: 14px;
   --font-size-lg: 16px;
+  --line-height: 1.5;
 
-  /* spacings */
-  --spacing-sm: 4px;
-  --spacing-md: 8px;
-  --spacing-lg: 16px;
+  /* Spacing (4px scale) */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 5%);
+  --shadow-md: 0 4px 6px rgb(0 0 0 / 10%);
+
+  /* Transition */
+  --transition-fast: 150ms;
+  --transition-base: 300ms;
+}
+
+/* theme-light */
+:root[data-theme='light'] {
+  --color-bg: #fff;
+  --color-bg-muted: #f0f2f5;
+  --color-text: #222;
+  --color-text-muted: #666;
+  --color-primary: #1976d2;
+  --color-primary-hover: #1565c0;
+}
+
+/* theme-dark */
+:root[data-theme='dark'] {
+  --color-bg: #0d0d0d;
+  --color-bg-muted: #1a1a1a;
+  --color-text: #f5f5f5;
+  --color-text-muted: #bbb;
+  --color-primary: #ff9800;
+  --color-primary-hover: #e68900;
 }
