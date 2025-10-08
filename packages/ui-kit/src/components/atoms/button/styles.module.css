@@ -1,20 +1,29 @@
 .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: var(--spacing-2) var(--spacing-4);
   border: none;
   border-radius: var(--radius-md);
   cursor: pointer;
   font-size: var(--font-size-md);
   font-family: var(--font-family);
-  transition: background-color var(--transition-base) ease-in-out;
+  font-weight: 500;
+  transition:
+    background-color var(--transition-base) ease-in-out,
+    color var(--transition-base) ease-in-out,
+    box-shadow var(--transition-base) ease-in-out;
   box-shadow: var(--shadow-sm);
 }
+
+/* --- Варианты --- */
 
 .primary {
   background-color: var(--color-primary);
   color: #fff;
 }
 
-.primary:hover {
+.primary:hover:not(:disabled, [aria-busy='true']) {
   background-color: var(--color-primary-hover);
 }
 
@@ -24,7 +33,20 @@
   border: 1px solid var(--color-primary);
 }
 
-.secondary:hover {
+.secondary:hover:not(:disabled, [aria-busy='true']) {
   background-color: var(--color-primary);
   color: #fff;
+}
+
+/* --- Состояния --- */
+
+.button:disabled,
+.button[aria-disabled='true'] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.button[aria-busy='true'] {
+  cursor: wait;
 }
