@@ -8,8 +8,6 @@ type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 export const Button: FC<Props> = ({ children, variant = 'primary', ...props }) => {
-  console.log('Button');
-
   return (
     <button className={cn(styles.button, styles[variant])} {...props}>
       {children}
