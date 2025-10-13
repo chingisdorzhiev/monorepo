@@ -1,4 +1,4 @@
 export const hostRoutes = {
-  home: '/',
   notFound: '*',
+  home: '/',
 };

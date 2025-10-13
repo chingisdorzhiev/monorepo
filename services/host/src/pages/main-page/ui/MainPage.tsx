@@ -1,9 +1,15 @@
-import { Layout } from './Layout';
+import { Sidebar } from './Sidebar';
 
-export const MainPage = () => {
+import styles from './styles.module.css';
+
+export const MainPage: React.FC = () => {
   return (
-    <>
-      <Layout />
-    </>
+    <div className={styles.mainPageContainer}>
+      <Sidebar />
+      <section className={styles.content}>
+        <h1>Главная страница</h1>
+        <p>Добро пожаловать!</p>
+      </section>
+    </div>
   );
 };

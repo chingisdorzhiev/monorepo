@@ -8,7 +8,7 @@ type Props = {
 const AppProvider: React.FC<Props> = ({ children }) => {
   return (
     <ThemeProvider>
-      <RouterProvider>{children}</RouterProvider>;
+      <RouterProvider>{children}</RouterProvider>
     </ThemeProvider>
   );
 };
