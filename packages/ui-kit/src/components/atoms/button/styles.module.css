@@ -38,6 +38,27 @@
   color: #fff;
 }
 
+.link {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  text-decoration: underline;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.link:hover:not(:disabled) {
+  color: var(--color-primary-hover);
+  text-decoration: none;
+}
+
+.link:disabled {
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  text-decoration: underline;
+}
+
 /* --- Состояния --- */
 
 .button:disabled,

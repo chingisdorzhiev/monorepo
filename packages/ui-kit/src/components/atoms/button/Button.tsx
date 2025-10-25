@@ -20,7 +20,7 @@ import styles from './styles.module.css';
 
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   /** Вариант оформления кнопки */
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'link';
   /** Состояние загрузки */
   loading?: boolean;
   /** Кнопка неактивна */

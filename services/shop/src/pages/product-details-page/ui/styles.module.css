@@ -1,0 +1,28 @@
+.container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.topSection {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+}
+
+.details h1 {
+  margin: 0 0 8px;
+}
+
+.bottomSection {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.review {
+  border-top: 1px solid var(--color-border);
+  padding-top: 8px;
+}
