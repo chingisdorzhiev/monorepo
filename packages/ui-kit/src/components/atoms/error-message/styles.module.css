@@ -1,0 +1,20 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-4);
+  background: var(--color-danger);
+  color: #fff;
+  border-radius: var(--radius-md);
+  min-height: 100px;
+}
+
+.text {
+  font-size: var(--font-size-md);
+  margin-bottom: var(--spacing-2);
+}
+
+.action {
+  /* контейнер для кнопки или других действий */
+}

@@ -1,3 +1,2 @@
-// products
-export { useProducts, useProductById } from './queries/products';
-export { type ProductsDto } from './modules/products';
+export { httpClient } from './config';
+export { queryClient } from './config';

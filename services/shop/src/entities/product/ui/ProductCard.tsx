@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { shopPathes } from '~/shared/constants';
+
+import { shopPathes } from '~shared/constants';
+
 import type { ProductUi } from '../model/types';
 
 import styles from './styles.module.css';

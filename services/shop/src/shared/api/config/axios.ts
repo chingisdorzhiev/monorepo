@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://dummyjson.com/';
+import { BASE_API_URL } from '../constants';
 
 export const axiosInstance = axios.create({
-  baseURL: BASE_URL,
+  baseURL: BASE_API_URL,
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',

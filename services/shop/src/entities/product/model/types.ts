@@ -1,5 +1,5 @@
 export type ProductUi = {
   title: string;
-  price: string;
+  price: number;
   id: number;
 };

@@ -25,6 +25,8 @@ export function buildPlugins({
     }),
     new DefinePlugin({
       __PLATFORM__: JSON.stringify(platform),
+      __DEV_MODE__: JSON.stringify(isDev),
+      __PROD_MODE__: JSON.stringify(isProd),
     }),
   ];
 

@@ -1,1 +1,0 @@
-export { productsEndpoints } from './products';
