@@ -9,6 +9,7 @@ export const RouterProvider: React.FC<Props> = ({ children }) => {
     <BrowserRouter
       future={{
         v7_relativeSplatPath: true,
+        v7_startTransition: true,
       }}
     >
       {children}

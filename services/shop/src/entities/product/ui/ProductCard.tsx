@@ -1,5 +1,6 @@
 import React from 'react';
 import { Typography } from '@packages/ui-kit';
+import { Link as RouterLink } from 'react-router-dom';
 
 import { shopPathes } from '~shared/constants';
 
@@ -20,7 +21,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     <div className={styles.product}>
       <h3>{title}</h3>
       <p>Price: ${price}</p>
-      <Link href={`${shopPathes.productById}/${id}`}>Details</Link>
+      <Link as={RouterLink} to={`${shopPathes.productById}/${id}`}>
+        Details
+      </Link>
     </div>
   );
 };

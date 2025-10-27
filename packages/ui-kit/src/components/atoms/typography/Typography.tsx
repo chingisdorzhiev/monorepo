@@ -54,16 +54,36 @@ export const Text: FC<TextProps> = ({
     </Base>
   );
 };
+
 /**
  * Ссылка
  */
-type LinkProps = BaseProps & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'children'>;
 
-const Link: FC<LinkProps> = ({ children, className, ...props }) => {
+type LinkProps<T extends React.ElementType = 'a'> = {
+  as?: T;
+  children: React.ReactNode;
+  disabled?: boolean;
+  className?: string;
+} & Omit<React.ComponentPropsWithoutRef<T>, 'children'>;
+
+const Link = <T extends React.ElementType = 'a'>({
+  as,
+  children,
+  disabled = false,
+  className,
+  ...props
+}: LinkProps<T>) => {
+  const Component = as || 'a';
+
   return (
-    <a className={cn(styles.link, className)} {...props}>
+    <Component
+      className={cn(styles.link, disabled && styles.disabled, className)}
+      aria-disabled={disabled}
+      tabIndex={disabled ? -1 : undefined}
+      {...props}
+    >
       {children}
-    </a>
+    </Component>
   );
 };
 
