@@ -11,11 +11,11 @@ import styles from './styles.module.css';
 const { Text, Title, Link } = Typography;
 
 export const ProductDetailsPage: FC = () => {
-  const { id } = useParams<{ id: string }>();
-  const productId = Number(id);
+  const { productId } = useParams<{ productId: string }>();
+  const id = Number(productId);
   const navigate = useNavigate();
 
-  const { data: product, isLoading, error } = useQuery(productQueries.detail(productId));
+  const { data: product, isLoading, error } = useQuery(productQueries.detail(id));
 
   return (
     <QueryBoundary isLoading={isLoading} error={error}>
