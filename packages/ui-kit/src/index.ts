@@ -6,3 +6,5 @@ export { Loader } from './components/atoms/loader/Loader';
 export { ErrorMessage } from './components/atoms/error-message/ErrorMessage';
 export { ProductImageGallery } from './components/atoms/product-image-gallery/ProductImageGallery';
 export { RatingStars } from './components/atoms/rating-stars/RatingStars';
+export { FavoriteButton } from './components/atoms/favourite-button/FavoriteButton';
+export { Card } from './components/atoms/card/Card';

@@ -3,14 +3,14 @@ import { cn } from '../../../utils';
 
 import styles from './styles.module.css';
 
-interface Props {
+interface SwitchProps {
   checked?: boolean;
   defaultChecked?: boolean;
   onChange?: (checked: boolean) => void;
   disabled?: boolean;
 }
 
-export const Switch: FC<Props> = ({
+export const Switch: FC<SwitchProps> = ({
   checked,
   defaultChecked = false,
   onChange,

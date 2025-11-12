@@ -1,2 +1,1 @@
-// shop pathes
-export { shopPathes } from './pathes';
+export { PATHES } from './pathes';

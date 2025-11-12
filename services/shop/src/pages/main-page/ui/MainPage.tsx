@@ -1,18 +1,22 @@
-import { Button, Typography } from '@packages/ui-kit';
+import { Typography } from '@packages/ui-kit';
 import { Link as RouterLink } from 'react-router-dom';
 
-import { shopPathes } from '~shared/constants';
+import { PATHES } from '~shared/constants';
 
-const { Link } = Typography;
+import styles from './styles.module.css';
+
+const { Link, Title } = Typography;
 
 export const MainPage = () => {
   return (
-    <div>
-      <div>SHOP Main Page</div>
-      <Button>Кнопка</Button>
-      <div>
-        <Link as={RouterLink} to={shopPathes.products}>
+    <div className={styles.mainPage}>
+      <Title level={1}>SHOP Main Page</Title>
+      <div className={styles.navMenu}>
+        <Link as={RouterLink} to={PATHES.PRODUCTS}>
           Products
+        </Link>
+        <Link as={RouterLink} to={PATHES.CATEGORIES}>
+          Categories
         </Link>
       </div>
     </div>

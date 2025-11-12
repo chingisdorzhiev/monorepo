@@ -10,7 +10,7 @@ export const Sidebar: React.FC = () => {
     <aside className={styles.sidebar}>
       <Button variant="secondary">Панель</Button>
 
-      <Link href={shopRoutes.main} className={styles.sidebarLink}>
+      <Link href={shopRoutes.root} className={styles.sidebarLink}>
         Магазин
       </Link>
     </aside>

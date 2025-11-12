@@ -1,0 +1,46 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--spacing-4);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    background-color var(--transition-base);
+}
+
+/* Варианты */
+.default {
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.outlined {
+  border: 1px solid var(--color-border);
+  background: transparent;
+  box-shadow: none;
+}
+
+.elevated {
+  border: none;
+  box-shadow: var(--shadow-md);
+}
+
+/* Ховер */
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.clickable:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}

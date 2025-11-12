@@ -1,8 +1,8 @@
-import React from 'react';
-import { Typography } from '@packages/ui-kit';
+import React, { ReactNode } from 'react';
+import { Typography, Card } from '@packages/ui-kit';
 import { Link as RouterLink } from 'react-router-dom';
 
-import { shopPathes } from '~shared/constants';
+import { PATHES } from '~shared/constants';
 
 import type { ProductUi } from '../model/types';
 
@@ -12,18 +12,22 @@ const { Link } = Typography;
 
 interface ProductCardProps {
   product: ProductUi;
+  render?: ReactNode;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+export const ProductCard: React.FC<ProductCardProps> = ({ product, render }) => {
   const { title, id, price } = product;
 
   return (
-    <div className={styles.product}>
-      <h3>{title}</h3>
+    <Card>
+      <div className={styles.header}>
+        <h3>{title}</h3>
+        {render}
+      </div>
       <p>Price: ${price}</p>
-      <Link as={RouterLink} to={`${shopPathes.productById}/${id}`}>
+      <Link as={RouterLink} to={`${PATHES.PRODUCT}/${id}`}>
         Details
       </Link>
-    </div>
+    </Card>
   );
 };

@@ -11,14 +11,14 @@ import styles from './styles.module.css';
  * />
  */
 
-interface Props {
+interface ProductImageGalleryProps {
   /** Основное изображение продукта (миниатюра) */
   thumbnail?: string;
   /** Массив изображений продукта */
   images: string[];
 }
 
-export const ProductImageGallery: FC<Props> = ({ images, thumbnail }) => {
+export const ProductImageGallery: FC<ProductImageGalleryProps> = ({ images, thumbnail }) => {
   const allImages = thumbnail ? [thumbnail, ...images.filter(img => img !== thumbnail)] : images;
 
   const [selected, setSelected] = useState(0);

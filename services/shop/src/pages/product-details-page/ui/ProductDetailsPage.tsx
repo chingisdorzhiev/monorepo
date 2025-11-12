@@ -1,10 +1,11 @@
-import { FC } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
-import { ProductImageGallery, RatingStars, Typography } from '@packages/ui-kit';
+import { FC, useEffect } from 'react';
+import { useNavigate, useParams, Link as RouterLink } from 'react-router-dom';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { ProductImageGallery, RatingStars, Typography, Button } from '@packages/ui-kit';
 
 import { productQueries } from '~entities/product';
 import { QueryBoundary } from '~shared/ui';
+import { PATHES } from '~shared/constants';
 
 import styles from './styles.module.css';
 
@@ -14,14 +15,41 @@ export const ProductDetailsPage: FC = () => {
   const { productId } = useParams<{ productId: string }>();
   const id = Number(productId);
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
   const { data: product, isLoading, error } = useQuery(productQueries.detail(id));
+
+  // Prefetch соседних товаров
+  useEffect(() => {
+    const nextId = id + 1;
+    const prevId = id - 1;
+
+    if (nextId) {
+      queryClient.prefetchQuery(productQueries.detail(nextId));
+    }
+    if (prevId > 0) {
+      queryClient.prefetchQuery(productQueries.detail(prevId));
+    }
+  }, [id, queryClient]);
+
+  const handleNavigate = (nextId: number) => navigate(`${PATHES.PRODUCT}/${nextId}`);
 
   return (
     <QueryBoundary isLoading={isLoading} error={error}>
       {product && (
         <div className={styles.container}>
-          <Link onClick={() => navigate(-1)}>Back to Products</Link>
+          <Link as={RouterLink} to={PATHES.PRODUCTS}>
+            Back to Products
+          </Link>
+
+          <div className={styles.navigation}>
+            <Button disabled={id <= 1} onClick={() => handleNavigate(id - 1)} variant="secondary">
+              ← Previous
+            </Button>
+            <Button onClick={() => handleNavigate(id + 1)} variant="primary">
+              Next →
+            </Button>
+          </div>
 
           <div className={styles.topSection}>
             <ProductImageGallery images={product.images} thumbnail={product.thumbnail} />

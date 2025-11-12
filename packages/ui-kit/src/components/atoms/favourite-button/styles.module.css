@@ -1,0 +1,41 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--color-text);
+  transition:
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.button:hover {
+  color: var(--color-primary);
+  transform: scale(1.05);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.icon {
+  font-size: 20px;
+  line-height: 1;
+  transition: transform var(--transition-base);
+}
+
+.button:hover .icon {
+  transform: scale(1.15);
+}
+
+.active {
+  color: var(--color-primary);
+}
+
+.label {
+  font-weight: 500;
+  font-size: 14px;
+}

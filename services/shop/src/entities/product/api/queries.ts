@@ -15,6 +15,9 @@ export const productQueries = {
       queryFn: () => productApi.getById(id),
       enabled: !!id,
       select: mapProductDtoToProductUi,
+      staleTime: 1000 * 15,
+      gcTime: 1000 * 30,
+      refetchOnWindowFocus: true,
     }),
 
   // список всех продуктов
@@ -35,5 +38,8 @@ export const productQueries = {
         const nextSkip = lastPage.skip + lastPage.limit;
         return nextSkip < lastPage.total ? nextSkip : undefined;
       },
+      staleTime: 1000 * 60 * 5,
+      gcTime: 1000 * 60 * 10,
+      refetchOnWindowFocus: true,
     }),
 };

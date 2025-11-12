@@ -1,4 +1,6 @@
 import { type FC, type ReactNode, type PropsWithChildren, Suspense } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
+
 import { Loader, ErrorMessage } from '@packages/ui-kit';
 
 interface QueryBoundaryProps {
@@ -15,15 +17,21 @@ export const QueryBoundary: FC<PropsWithChildren<QueryBoundaryProps>> = ({
   error,
   children,
   fallback = <Loader text="Loading..." />,
-  errorFallback = error => <ErrorMessage text={`Error: ${(error as Error)?.message}`} />,
+  errorFallback = error => (
+    <ErrorMessage text={`Error: ${(error as Error)?.message || 'Something went wrong'}`} />
+  ),
   suspense = false,
 }) => {
   if (suspense) {
-    return <Suspense fallback={fallback}>{children}</Suspense>;
+    return (
+      <ErrorBoundary fallbackRender={({ error }) => errorFallback(error)}>
+        <Suspense fallback={fallback}>{children}</Suspense>
+      </ErrorBoundary>
+    );
   }
 
   if (isLoading) return fallback;
-  if (error) return <>{errorFallback}</>;
+  if (error) return errorFallback(error);
 
   return <>{children}</>;
 };

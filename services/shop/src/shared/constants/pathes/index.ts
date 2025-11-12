@@ -1,7 +1,13 @@
-const SHOP_ROOT = '';
+const ROOT = '/';
+const PRODUCTS = `${ROOT}products`;
+const PRODUCT = `${ROOT}product`;
+const CATEGORIES = `${ROOT}categories`;
+const CATEGORY = `${ROOT}category`;
 
-export const shopPathes = {
-  root: `${SHOP_ROOT}/`,
-  products: `${SHOP_ROOT}/products`,
-  productById: `${SHOP_ROOT}/product/:id`,
+export const PATHES = {
+  ROOT,
+  PRODUCTS,
+  PRODUCT,
+  CATEGORIES,
+  CATEGORY,
 };

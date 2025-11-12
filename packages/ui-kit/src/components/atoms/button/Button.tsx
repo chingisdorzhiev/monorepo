@@ -18,7 +18,7 @@ import styles from './styles.module.css';
  * </Button>
  */
 
-type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   /** Вариант оформления кнопки */
   variant?: 'primary' | 'secondary' | 'link';
   /** Состояние загрузки */
@@ -27,7 +27,7 @@ type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   disabled?: boolean;
 };
 
-export const Button: FC<Props> = ({
+export const Button: FC<ButtonProps> = ({
   children,
   variant = 'primary',
   loading = false,
