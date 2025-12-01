@@ -8,3 +8,4 @@ export { ProductImageGallery } from './components/atoms/product-image-gallery/Pr
 export { RatingStars } from './components/atoms/rating-stars/RatingStars';
 export { FavoriteButton } from './components/atoms/favourite-button/FavoriteButton';
 export { Card } from './components/atoms/card/Card';
+export { Input } from './components/atoms/input/Input';

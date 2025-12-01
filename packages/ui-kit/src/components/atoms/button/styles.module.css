@@ -71,3 +71,14 @@
 .button[aria-busy='true'] {
   cursor: wait;
 }
+
+/* --- Загрузка --- */
+.spinnerWrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.loadingText {
+  opacity: 0.6;
+}

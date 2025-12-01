@@ -2,8 +2,8 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 import { Link as RouterLink } from 'react-router-dom';
 import { Button, Typography } from '@packages/ui-kit';
 
-import { Favourite } from '~features/favourite-product';
-import { productQueries, ProductCard, mapProductDtoToProductUi } from '~entities/product';
+import { ProductList } from '~widgets/product-list';
+import { productQueries, mapProductDtoToProductUi } from '~entities/product';
 import { QueryBoundary } from '~shared/ui';
 import { PATHES } from '~shared/constants';
 
@@ -23,27 +23,15 @@ export const ProductsListPage = () => {
         Back to Main Page
       </Link>
 
-      <section className={styles.container}>
-        <h2 className={styles.title}>Products</h2>
+      <ProductList products={products} />
 
-        <div className={styles.productsGrid}>
-          {products.map(product => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              render={<Favourite product={product} />}
-            />
-          ))}
+      {hasNextPage && (
+        <div className={styles.loadMoreWrapper}>
+          <Button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
+            {isFetchingNextPage ? 'Loading more...' : 'Load more'}
+          </Button>
         </div>
-
-        {hasNextPage && (
-          <div className={styles.loadMoreWrapper}>
-            <Button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
-              {isFetchingNextPage ? 'Loading more...' : 'Load more'}
-            </Button>
-          </div>
-        )}
-      </section>
+      )}
     </QueryBoundary>
   );
 };

@@ -16,6 +16,9 @@ import styles from './styles.module.css';
  * <Button variant="secondary" disabled>
  *   Disabled button
  * </Button>
+ *
+ *  * @example
+ * <Button loading>Save</Button>
  */
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -45,7 +48,14 @@ export const Button: FC<ButtonProps> = ({
       aria-disabled={isDisabled}
       aria-busy={loading}
     >
-      {loading ? <SpinnerSvg size={16} aria-label="Loading" /> : children}
+      {/* {loading ? <SpinnerSvg size={16} aria-label="Loading" /> : children} */}
+      {loading && (
+        <span className={styles.spinnerWrapper}>
+          <SpinnerSvg size={16} aria-label="Loading" />
+        </span>
+      )}
+
+      <span className={cn(loading && styles.loadingText)}>{children}</span>
     </button>
   );
 };

@@ -42,4 +42,14 @@ export const productQueries = {
       gcTime: 1000 * 60 * 10,
       refetchOnWindowFocus: true,
     }),
+
+  // поиск
+  search: (query: string) =>
+    queryOptions({
+      queryKey: [...productQueries.all(), 'search', query],
+      queryFn: () => productApi.search(query),
+      select: mapProductsDtoToProductsUi,
+      staleTime: 1000 * 60 * 5,
+      gcTime: 1000 * 60 * 10,
+    }),
 };

@@ -5,13 +5,6 @@
   align-items: center;
 }
 
-.title {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 24px;
-  text-align: center;
-}
-
 .productsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -19,11 +12,4 @@
   width: 100%;
   max-width: 1200px;
   margin-bottom: 32px;
-}
-
-.loadMoreWrapper {
-  margin-top: 8px;
-  margin-bottom: 24px;
-  display: flex;
-  justify-content: center;
 }

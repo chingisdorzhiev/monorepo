@@ -7,4 +7,5 @@ export const productApi = {
   getById: (id: number) => httpClient.get<ProductDto>(productsEndpoints.byId(id)),
   getPaginated: (skip: number, limit: number) =>
     httpClient.get<ProductsDto>(`${productsEndpoints.all()}?limit=${limit}&skip=${skip}`),
+  search: (query: string) => httpClient.get<ProductsDto>(productsEndpoints.search(query)),
 };
