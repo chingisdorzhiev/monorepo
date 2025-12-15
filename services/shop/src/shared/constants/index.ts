@@ -1,1 +1,1 @@
-export { PATHES } from './pathes';
+export { PATHES, LINK_PATHES } from './pathes';

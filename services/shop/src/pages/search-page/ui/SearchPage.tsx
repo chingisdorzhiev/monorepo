@@ -7,7 +7,7 @@ import { SearchProducts, useSyncQueryParam, useSearchQuery } from '~features/sea
 import { productQueries } from '~entities/product';
 import { QueryBoundary } from '~shared/ui';
 import { useDebouncedValue } from '~shared/lib';
-import { PATHES } from '~shared/constants';
+import { LINK_PATHES } from '~shared/constants';
 
 const { Link } = Typography;
 
@@ -22,7 +22,7 @@ export const SearchPage = () => {
 
   return (
     <div style={{ padding: '20px' }}>
-      <Link as={RouterLink} to={PATHES.ROOT}>
+      <Link as={RouterLink} to={LINK_PATHES.HOME}>
         Back to Main Page
       </Link>
 

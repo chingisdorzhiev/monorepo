@@ -3,7 +3,7 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import { SearchProducts } from '~/features/search-products';
 
-import { PATHES } from '~shared/constants';
+import { LINK_PATHES } from '~shared/constants';
 
 import styles from './styles.module.css';
 
@@ -15,10 +15,10 @@ export const MainPage = () => {
       <Title level={1}>SHOP Main Page</Title>
       <SearchProducts />
       <div className={styles.navMenu}>
-        <Link as={RouterLink} to={PATHES.PRODUCTS}>
+        <Link as={RouterLink} to={LINK_PATHES.PRODUCTS}>
           Products
         </Link>
-        <Link as={RouterLink} to={PATHES.CATEGORIES}>
+        <Link as={RouterLink} to={LINK_PATHES.CATEGORIES}>
           Categories
         </Link>
       </div>

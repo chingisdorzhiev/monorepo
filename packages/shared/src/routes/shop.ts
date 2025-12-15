@@ -1,3 +1,3 @@
 export const shopRoutes = {
-  root: '/shop',
+  root: 'shop',
 };

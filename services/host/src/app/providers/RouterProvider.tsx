@@ -5,5 +5,5 @@ type Props = {
 };
 
 export const RouterProvider: React.FC<Props> = ({ children }) => {
-  return <BrowserRouter>{children}</BrowserRouter>;
+  return <BrowserRouter basename="/">{children}</BrowserRouter>;
 };

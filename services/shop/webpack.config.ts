@@ -43,7 +43,7 @@ export default (env: EnvVariables) => {
       name: 'shop',
       filename: 'remoteEntry.js',
       exposes: {
-        './Router': './src/app/routes/AppRoutes.tsx',
+        './Router': './src/app/microfront-routes',
       },
       shared: {
         ...packageJson.dependencies,

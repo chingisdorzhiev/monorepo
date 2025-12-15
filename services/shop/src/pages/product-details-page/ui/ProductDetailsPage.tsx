@@ -5,7 +5,7 @@ import { ProductImageGallery, RatingStars, Typography, Button } from '@packages/
 
 import { productQueries } from '~entities/product';
 import { QueryBoundary } from '~shared/ui';
-import { PATHES } from '~shared/constants';
+import { LINK_PATHES } from '~shared/constants';
 
 import styles from './styles.module.css';
 
@@ -32,13 +32,13 @@ export const ProductDetailsPage: FC = () => {
     }
   }, [id, queryClient]);
 
-  const handleNavigate = (nextId: number) => navigate(`${PATHES.PRODUCT}/${nextId}`);
+  const handleNavigate = (nextId: number) => navigate(`${LINK_PATHES.PRODUCT}/${nextId}`);
 
   return (
     <QueryBoundary isLoading={isLoading} error={error}>
       {product && (
         <div className={styles.container}>
-          <Link as={RouterLink} to={PATHES.PRODUCTS}>
+          <Link as={RouterLink} to={LINK_PATHES.PRODUCTS}>
             Back to Products
           </Link>
 

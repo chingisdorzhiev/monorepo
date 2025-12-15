@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Typography, Card } from '@packages/ui-kit';
 
-import { PATHES } from '~shared/constants';
+import { LINK_PATHES } from '~shared/constants';
 
 import type { CategoryDto } from '../api/types';
 
@@ -16,7 +16,7 @@ export const CategoryCard: FC<CategoryCardProps> = ({ category }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`${PATHES.CATEGORY}/${category.slug}`);
+    navigate(`${LINK_PATHES.CATEGORY}/${category.slug}`);
   };
 
   return (

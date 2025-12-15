@@ -20,7 +20,7 @@ export const AppRoutes = () => {
       <Route path={hostRoutes.home} element={<Layout />}>
         <Route index element={<MainPage />} />
         <Route path={hostRoutes.notFound} element={<NotFoundPage />} />
-        <Route path={shopRoutes.root} element={<ShopPage />} />
+        <Route path={`${shopRoutes.root}/*`} element={<ShopPage />} />
       </Route>
     </Routes>
   );

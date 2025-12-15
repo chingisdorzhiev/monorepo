@@ -4,7 +4,7 @@ import { Typography } from '@packages/ui-kit';
 
 import { CategoryCard, categoryQueries } from '~entities/category';
 import { QueryBoundary } from '~shared/ui';
-import { PATHES } from '~shared/constants';
+import { LINK_PATHES } from '~shared/constants';
 
 import styles from './styles.module.css';
 
@@ -15,7 +15,7 @@ export const CategoriesPage = () => {
 
   return (
     <QueryBoundary suspense>
-      <Link as={RouterLink} to={PATHES.ROOT}>
+      <Link as={RouterLink} to={LINK_PATHES.HOME}>
         Back to Main Page
       </Link>
 

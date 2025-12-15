@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import { Typography, Card } from '@packages/ui-kit';
 import { Link as RouterLink } from 'react-router-dom';
 
-import { PATHES } from '~shared/constants';
+import { LINK_PATHES } from '~shared/constants';
 
 import type { ProductUi } from '../model/types';
 
@@ -25,7 +25,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, render }) => 
         {render}
       </div>
       <p>Price: ${price}</p>
-      <Link as={RouterLink} to={`${PATHES.PRODUCT}/${id}`}>
+      <Link as={RouterLink} to={`${LINK_PATHES.PRODUCT}/${id}`}>
         Details
       </Link>
     </Card>

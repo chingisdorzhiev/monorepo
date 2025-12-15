@@ -1,9 +1,11 @@
-const ROOT = '/';
-const PRODUCTS = `${ROOT}products`;
-const PRODUCT = `${ROOT}product`;
-const CATEGORIES = `${ROOT}categories`;
-const CATEGORY = `${ROOT}category`;
-const SEARCH = `${ROOT}search`;
+import { shopRoutes } from '@packages/shared/src/routes';
+
+const ROOT = ``;
+const PRODUCTS = `products`;
+const PRODUCT = `product`;
+const CATEGORIES = `categories`;
+const CATEGORY = `category`;
+const SEARCH = `search`;
 
 export const PATHES = {
   ROOT,
@@ -12,4 +14,15 @@ export const PATHES = {
   CATEGORIES,
   CATEGORY,
   SEARCH,
+};
+
+const HOME = `/${shopRoutes.root}/`; // `/${shopRoutes.root}/` - для микрофронта, '/' - без интеграции
+
+export const LINK_PATHES = {
+  HOME,
+  PRODUCTS: `${HOME}${PRODUCTS}`,
+  PRODUCT: `${HOME}${PRODUCT}`,
+  CATEGORIES: `${HOME}${CATEGORIES}`,
+  CATEGORY: `${HOME}${CATEGORY}`,
+  SEARCH: `${HOME}${SEARCH}`,
 };
